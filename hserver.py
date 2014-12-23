@@ -5,7 +5,7 @@ from flask import Flask, request
 import sys
 import readvec
 import numpy as np
-import scipy.spatial.distance.cosine
+from scipy.spatial.distance import cosine
 
 reload(sys)
 sys.setdefaultencoding('UTF-8')
@@ -40,7 +40,7 @@ def wordsimi():
     return cosine(vec1, vec2)
 
 
-lex = readvec('vec2.bin')
+lex = readvec.readvec('vec2.bin')
 app.run(debug=True, host='0.0.0.0', port=8000)
 
 

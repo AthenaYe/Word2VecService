@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "readvec.py", line 33, in <module>
+    lex = readvec('vec2.bin')
+  File "readvec.py", line 25, in readvec
+    w = w.decode('utf-8')
+  File "/usr/lib/python2.7/encodings/utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode bytes in position 96-97: unexpected end of data

@@ -3,6 +3,10 @@
 
 import struct
 import numpy as np
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 def readvec(vecname, max_words=2**32):
     lex = {}
@@ -18,7 +22,9 @@ def readvec(vecname, max_words=2**32):
                 if i in ('\0', '\t', ' ', '\n'):
                     break
                 w = w + i
-            w = w.decode('utf-8')
+            try:
+                w = w.decode('utf-8')
+
             vector = struct.unpack('<{}f'.format(size), f.read(4*size))
             f.read(1)
             lex[w] = np.array(vector)
@@ -26,8 +32,8 @@ def readvec(vecname, max_words=2**32):
     return lex
 
 if __name__ == '__main__':
-    lex = readvec('vec2.bin', 10)
-    print lex
+    lex = readvec('vec2.bin')
+    # print lex
 
 
 # vim: ts=4 sw=4 sts=4 expandtab
