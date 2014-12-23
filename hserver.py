@@ -29,9 +29,7 @@ def wordsimi():
 #    return u"{}:{}".format(word1, word2)
     return word1+word2
 
-
-
-app.run(debug=True)
+app.run(debug=True, host='0.0.0.0', port=8000)
 
 
 # vim: ts=4 sw=4 sts=4 expandtab
