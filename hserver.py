@@ -3,6 +3,7 @@
 
 from flask import Flask, request
 import sys
+import readvec
 
 reload(sys)
 sys.setdefaultencoding('UTF-8')
@@ -28,6 +29,8 @@ def wordsimi():
         return "BAD", 400
 #    return u"{}:{}".format(word1, word2)
     return word1+word2
+
+
 
 app.run(debug=True, host='0.0.0.0', port=8000)
 
