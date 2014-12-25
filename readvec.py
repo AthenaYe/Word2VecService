@@ -36,6 +36,7 @@ def readvec(vecname, max_words=2**32):
                 print l, w
                 # print 'a'+w+'daaa'
                 # print c
+            print 'begin'+w+'end'
             vector = struct.unpack('<{}f'.format(size), f.read(4*size))
 
             f.read(1)
